@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 09:48:42 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/04/23 15:36:00 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/04/23 16:16:48 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	main(int ac, char **av)
 	if (id < 0)
 	{
 		ft_putstr("kill: illegal pid : ", 2);
-		error_msg(av[2]);
+		error_msg(av[1]);
 	}
 	while (av[2][++i])
 		send_message (av[2][i], id);
