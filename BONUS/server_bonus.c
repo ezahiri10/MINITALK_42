@@ -6,11 +6,18 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 23:35:56 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/04/23 11:28:14 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/04/23 15:49:25 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk_bonus.h"
+
+void	*ft_memset(void *b, int c, size_t len)
+{
+	while (len--)
+		*(unsigned char *)(b + len) = (unsigned char )c;
+	return (b);
+}
 
 static void	ft_write(t_object	*obj)
 {
@@ -31,7 +38,7 @@ static void	ft_write(t_object	*obj)
 		ft_putstr(obj->str, 1);
 		obj->b = 0;
 		obj->x = 0;
-		memset(obj->str, 0, 4);
+		ft_memset(obj->str, 0, 4);
 	}
 }
 
@@ -43,7 +50,7 @@ static void	_handler(int sig_num, siginfo_t *sig, void *none)
 	(void)none;
 	if (obj.id_send != sig->si_pid)
 	{
-		memset(&obj, 0, sizeof(obj));
+		ft_memset(&obj, 0, sizeof(obj));
 		cpt = 128;
 	}
 	if (sig_num == SIGUSR1)

@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 09:48:42 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/04/23 11:36:33 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/04/23 15:36:00 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	send_message(char c, int id)
 void	ft_handler(int sig)
 {
 	(void)sig;
-	printf ("your message Recieaved\n");
+	ft_putstr ("your message Recieaved\n", 1);
 }
 
 int	main(int ac, char **av)
