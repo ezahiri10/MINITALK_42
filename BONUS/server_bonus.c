@@ -6,18 +6,11 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 23:35:56 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/04/23 15:49:25 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/04/24 12:16:31 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk_bonus.h"
-
-void	*ft_memset(void *b, int c, size_t len)
-{
-	while (len--)
-		*(unsigned char *)(b + len) = (unsigned char )c;
-	return (b);
-}
 
 static void	ft_write(t_object	*obj)
 {

@@ -6,11 +6,33 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 09:48:42 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/04/23 16:16:48 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/04/24 12:16:39 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk_bonus.h"
+
+static long	ft_atoi(const char *s)
+{
+	long	r;
+
+	r = 0;
+	if (!*s)
+		return (-1);
+	while (*s)
+	{
+		if (*s >= '0' && *s <= '9')
+		{
+			r = r * 10 + *s - 48;
+			if (r > 2147483647 || r < -2147483648)
+				return (-1);
+			s++;
+		}
+		else
+			return (-1);
+	}
+	return (r);
+}
 
 void	send_message(char c, int id)
 {

@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 09:49:18 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/04/23 15:46:49 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/04/24 12:19:30 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ typedef struct s_object
 	int		x;
 }	t_object;
 
-long	ft_atoi(const char *s);
 void	ft_putchar(char c, int fd);
 void	ft_putnbr(long nb, int fd);
 void	ft_putstr(char *s, int fd);
 int		error_msg(char *s);
+void	*ft_memset(void *b, int c, size_t len);
 
 #endif

@@ -6,32 +6,17 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 23:07:55 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/04/23 15:45:28 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/04/24 12:13:49 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk_bonus.h"
 
-long	ft_atoi(const char *s)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	long	r;
-
-	r = 0;
-	if (!*s)
-		return (-1);
-	while (*s)
-	{
-		if (*s >= '0' && *s <= '9')
-		{
-			r = r * 10 + *s - 48;
-			if (r > 2147483647 || r < -2147483648)
-				return (-1);
-			s++;
-		}
-		else
-			return (-1);
-	}
-	return (r);
+	while (len--)
+		*(unsigned char *)(b + len) = (unsigned char )c;
+	return (b);
 }
 
 void	ft_putchar(char c, int fd)
