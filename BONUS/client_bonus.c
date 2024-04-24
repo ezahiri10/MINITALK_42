@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 09:48:42 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/04/24 12:16:39 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/04/24 12:23:00 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static long	ft_atoi(const char *s)
 	return (r);
 }
 
-void	send_message(char c, int id)
+static void	send_message(char c, int id)
 {
 	int		bit;
 	int		i;
@@ -59,7 +59,7 @@ void	send_message(char c, int id)
 	}
 }
 
-void	ft_handler(int sig)
+static void	ft_handler(int sig)
 {
 	(void)sig;
 	ft_putstr ("your message Recieaved\n", 1);

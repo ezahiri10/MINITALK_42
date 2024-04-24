@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 23:35:56 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/04/24 12:16:31 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/04/24 12:36:04 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ static void	ft_write(t_object	*obj)
 
 static void	_handler(int sig_num, siginfo_t *sig, void *none)
 {
-	static t_object	obj;
-	static int		cpt = 128;
+	t_object	obj;
+	static int	cpt = 128;
 
 	(void)none;
 	if (obj.id_send != sig->si_pid)
