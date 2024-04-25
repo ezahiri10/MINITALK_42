@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 23:35:56 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/04/23 14:46:31 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/04/25 22:28:02 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 static void	_handler(int sig_num, siginfo_t *sig, void *none)
 {
-	static int		c;
-	static int		cpt = 128;
-	static int		i;
-	static pid_t	id_send;
+	static unsigned char	c;
+	static int				cpt = 128;
+	static int				i;
+	static pid_t			id_send;
 
 	(void)none;
 	if (id_send != sig->si_pid)

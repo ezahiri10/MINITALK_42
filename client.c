@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 09:48:42 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/04/23 16:16:31 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/04/25 22:29:23 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	main(int ac, char **av)
 	if (ac != 3)
 		error_msg ("arguments not fount");
 	id = ft_atoi(av[1]);
-	if (id < 0)
+	if (id <= 1)
 	{
 		ft_putstr("kill: illegal pid : ", 2);
 		error_msg(av[1]);

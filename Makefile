@@ -6,7 +6,7 @@
 #    By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/21 11:19:13 by ezahiri           #+#    #+#              #
-#    Updated: 2024/04/23 13:45:27 by ezahiri          ###   ########.fr        #
+#    Updated: 2024/04/25 22:21:54 by ezahiri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ SRC2 =	server.c \
 
 
 SRC1_BONUS =	BONUS/client_bonus.c \
-				BONUS/utils_bonus.c  
+				BONUS/utils_bonus.c
 
 SRC2_BONUS =	BONUS/server_bonus.c \
 				BONUS/utils_bonus.c
