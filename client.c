@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 09:48:42 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/04/25 22:29:23 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/04/27 17:07:53 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,9 @@ void	send_message(char c, int id)
 	while (i < 8)
 	{
 		if (c & bit)
-		{
-			if (kill(id, SIGUSR1) == -1)
-				error_msg ("kill : No such process");
-		}
+			kill(id, SIGUSR1);
 		else
-		{
-			if (kill(id, SIGUSR2) == -1)
-				error_msg ("kill: No such process");
-		}
+			kill(id, SIGUSR2);
 		c <<= 1;
 		i++;
 		usleep(500);
@@ -46,11 +40,13 @@ int	main(int ac, char **av)
 	if (ac != 3)
 		error_msg ("arguments not fount");
 	id = ft_atoi(av[1]);
-	if (id <= 1)
+	if (id <= 0)
 	{
 		ft_putstr("kill: illegal pid : ", 2);
 		error_msg(av[1]);
 	}
+	if (kill(id, 0) == -1)
+		error_msg ("invalid pid ");
 	while (av[2][i])
 	{
 		send_message (av[2][i], id);

@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 23:35:56 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/04/27 13:34:32 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/04/27 17:21:43 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,8 @@ int	main(int ac, char **av)
 	ft_putstr("pid of serever is :    ", 1);
 	ft_putnbr (getpid(), 1);
 	ft_putchar('\n', 1);
-	sa.sa_sigaction = _handler;
 	sa.sa_flags = SA_SIGINFO;
+	sa.sa_sigaction = _handler;
 	if (sigaction(SIGUSR2, &sa, NULL) == -1)
 		return (-1);
 	else if (sigaction(SIGUSR1, &sa, NULL) == -1)

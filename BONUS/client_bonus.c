@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 09:48:42 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/04/25 22:28:49 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/04/27 15:07:10 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,25 +34,21 @@ static long	ft_atoi(const char *s)
 	return (r);
 }
 
-static void	send_message(char c, int id)
+void	send_message(char c, int id)
 {
 	int		bit;
 	int		i;
 
 	i = 0;
 	bit = 128;
+	if (kill(id, 0) == -1)
+		error_msg ("invalid pid ");
 	while (i < 8)
 	{
 		if (c & bit)
-		{
-			if (kill(id, SIGUSR1) == -1)
-				error_msg ("kill : No such process");
-		}
+			kill(id, SIGUSR1);
 		else
-		{
-			if (kill(id, SIGUSR2) == -1)
-				error_msg ("kill: No such process");
-		}
+			kill(id, SIGUSR2);
 		c <<= 1;
 		i++;
 		usleep(500);
