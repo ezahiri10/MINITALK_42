@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 23:35:56 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/04/25 22:28:02 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/04/27 13:34:32 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void	_handler(int sig_num, siginfo_t *sig, void *none)
 	{
 		c = 0;
 		i = 0;
-		cpt = 0;
+		cpt = 128;
 	}
 	if (sig_num == SIGUSR1)
 		c += cpt;
