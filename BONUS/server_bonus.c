@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 23:35:56 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/04/27 17:20:51 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/05/12 21:33:57 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ static void	ft_write(t_object	*obj)
 		write(1, &obj->c, 1);
 		return ;
 	}
-	if (obj->c >= 192 && obj->c <= 223)
+	if (obj->c >= 0b11000000 && obj->c < 0b11100000)
 		obj->b = 2;
-	else if (obj->c >= 224 && obj->c <= 239)
+	else if (obj->c >= 0b11100000 && obj->c < 0b11110000)
 		obj->b = 3;
-	else if (obj->c >= 240 && obj->c <= 244)
+	else if (obj->c >= 0b11110000 && obj->c < 0b11111000)
 		obj->b = 4;
 	obj->str[obj->x++] = obj->c;
 	if (obj->x == obj->b)
