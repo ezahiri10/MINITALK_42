@@ -1,9 +1,0 @@
-{
-	"files.associations": {
-		"minitalk.h": "c",
-		"stdlib.h": "c",
-		"signal.h": "c",
-		"limits.h": "c",
-		"algorithm": "c"
-	}
-}
